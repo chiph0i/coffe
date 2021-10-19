@@ -58,6 +58,7 @@ section {
   text-transform: uppercase;
   padding-bottom: 3.5rem;
   font-size: 4rem;
+  margin-top: 50px;
 }
 
 .heading span {
@@ -86,10 +87,15 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10%;
+  padding: 0 5%;
   background-color: var(--black);
   position: fixed;
   width: 100%;
+  height: 70px;
+  top: 0;
+}
+#menu {
+  line-height: 40px;
 }
 .logo__header {
   font-size: 26px;
@@ -109,15 +115,119 @@ section {
   font-weight: bold;
   text-transform: uppercase;
 }
+
+#menu-btn {
+  display: none;
+}
+.icon-right {
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+  margin: 10px 0 0 50px;
+}
 .icon-right:hover,
 .menu__header > .nav-content > li:hover > a {
   color: rgb(56, 41, 41);
   transition: 0.3s linear;
 }
-.icon-right {
-  font-size: 20px;
-  margin-left: 30px;
+#header .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background: var(--black);
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+#header .search-form.active {
+  transform: scaleY(1);
+}
+
+#header .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--main-color);
+  padding: 1rem;
+  background-color: var(--black);
+  text-transform: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#header .search-form label {
   cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  color: var(--main-color);
+}
+
+#header .search-form label:hover {
+  color: var(--main-color);
+}
+
+#header .cart-items-container {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: calc(100vh - 9.5rem);
+  width: 35rem;
+  background: var(--black);
+  border: 1px solid gray;
+  padding: 0 1.5rem;
+  border-radius: 10px;
+}
+
+#header .cart-items-container.active {
+  right: 0;
+}
+
+#header .cart-items-container .cart-item {
+  position: relative;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#header .cart-items-container .cart-item .fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+#header .cart-items-container .cart-item .fa-times:hover {
+  color: rgb(91, 76, 76);
+}
+
+#header .cart-items-container .cart-item img {
+  height: 7rem;
+}
+
+#header .cart-items-container .cart-item .content h3 {
+  font-size: 2rem;
+  color: #fff;
+  padding-bottom: 0.5rem;
+}
+
+#header .cart-items-container .cart-item .content .price {
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+#header .cart-items-container .btn {
+  width: 100%;
+  text-align: center;
 }
 /* css header end */
 /* css slide */
@@ -126,6 +236,8 @@ section {
   margin: 10px auto;
   width: 90%;
   top: 80px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .slider .slide {
   position: absolute;
@@ -216,6 +328,8 @@ section {
 
 .about .row .image img {
   width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .about .row .content {
   flex: 1 1 45rem;
@@ -514,4 +628,71 @@ section {
 
 .footer .credit span {
   color: var(--main-color);
+}
+@media screen and (max-width: 1224px) {
+  .menu__header > .nav-content > li > a {
+    font-size: 13px;
+  }
+
+  .menu__header .nav-content li {
+    padding: 0 15px;
+  }
+  .slider .slide {
+    height: 400px;
+  }
+  .navigation {
+    height: 410px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 50%;
+  }
+  #header {
+    padding: 0 auto;
+  }
+  .menu__header .nav-content li {
+    padding: 0 10px;
+  }
+  .icon-right {
+    margin-left: 20px;
+  }
+  .menu__header > .nav-content > li > a {
+    font-size: 10px;
+  }
+  .about .row .image img {
+    border-top-right-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #menu-btn {
+    display: inline-block;
+  }
+  #header .menu__header {
+    position: absolute;
+    border-radius: 10px;
+    top: 100%;
+    left: 75%;
+    background: var(--black);
+    width: 20rem;
+    border: 1px solid gray;
+    height: calc(50vh - 7rem);
+    display: none;
+  }
+  #header .menu__header.active {
+    right: 0;
+    display: block;
+  }
+
+  #header .menu__header a {
+    color: var(--main-color);
+    display: block;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .slider {
+    display: none;
+  }
 }
