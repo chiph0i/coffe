@@ -94,6 +94,7 @@ section {
   height: 70px;
   top: 0;
   z-index: 999;
+  border-bottom: 1px solid gray;
 }
 #menu {
   line-height: 40px;
