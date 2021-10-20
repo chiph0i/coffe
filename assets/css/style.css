@@ -93,6 +93,7 @@ section {
   width: 100%;
   height: 70px;
   top: 0;
+  z-index: 999;
 }
 #menu {
   line-height: 40px;
@@ -233,7 +234,7 @@ section {
 /* css slide */
 .slider {
   position: relative;
-  margin: 10px auto;
+  margin: 10px auto 50px auto;
   width: 90%;
   top: 80px;
   display: grid;
@@ -301,7 +302,6 @@ section {
   transform: translateY(-5px);
   margin: 0 6px;
   border-radius: 10px;
-  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
 }
 .navigation__visibility .slide-icon:hover {
   background-color: rgba(255, 255, 255, 0.9);
